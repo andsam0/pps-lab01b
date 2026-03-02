@@ -8,7 +8,8 @@ public class BronzeBankAccountTest extends AbstractBankAccountTest{
 
     @BeforeEach
     void init(){
-        this.bankAccount = new BronzeBankAccount(new CoreBankAccount(), new BronzeFeeStrategy());
+        BankAccountFactory factory = new BankAccountFactoryImpl();
+        this.bankAccount = factory.createBronzeAccount();
     }
 
     @Test
