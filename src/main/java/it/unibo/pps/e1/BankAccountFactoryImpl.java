@@ -4,16 +4,16 @@ public class BankAccountFactoryImpl implements BankAccountFactory{
 
     @Override
     public BankAccount createBronzeAccount() {
-        return new BronzeBankAccount(new CoreBankAccount(), amount -> amount < 100 ? 0 : 1);
+        return new BronzeBankAccount(new CoreBankAccount(), amount -> amount < 100 ? 0 : 1, (balance, withdrawAmount) -> balance < withdrawAmount);
     }
 
     @Override
     public BankAccount createSilverAccount() {
-        return new SilverBankAccount(new CoreBankAccount(), amount -> 1);
+        return new SilverBankAccount(new CoreBankAccount(), amount -> 1, (balance, withdrawAmount) -> balance < withdrawAmount);
     }
 
     @Override
     public BankAccount createGoldAccount() {
-        return new GoldBankAccount(new CoreBankAccount(), amount -> 0, ((balance, withdrawAmount) -> balance < withdrawAmount - 500));
+        return new GoldBankAccount(new CoreBankAccount(), amount -> 0, (balance, withdrawAmount) -> balance < withdrawAmount - 500);
     }
 }

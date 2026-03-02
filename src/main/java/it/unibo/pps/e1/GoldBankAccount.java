@@ -27,4 +27,4 @@ public class GoldBankAccount implements BankAccount {
         bankAccount.withdraw(amount + feeStrategy.calculateFee(amount));
     }
 }
-//this.getBalance() < amount - 500
+
