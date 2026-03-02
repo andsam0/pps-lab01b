@@ -1,6 +1,7 @@
 package it.unibo.pps.e1;
 
 public class BankAccountFactoryImpl implements BankAccountFactory{
+
     @Override
     public BankAccount createBronzeAccount() {
         return new BronzeBankAccount(new CoreBankAccount(), amount -> amount < 100 ? 0 : 1);

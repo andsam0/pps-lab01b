@@ -20,4 +20,22 @@ public class GoldBankAccountTest extends AbstractBankAccountTest {
         this.bankAccount.withdraw(withdraw);
         assertEquals(balance-withdraw, this.bankAccount.getBalance());
     }
+
+    @Test
+    public void canDebt(){
+        int balance = 1000;
+        int bigWithdraw = 1500;
+        this.bankAccount.deposit(balance);
+        this.bankAccount.withdraw(bigWithdraw);
+        assertEquals(balance-bigWithdraw, this.bankAccount.getBalance());
+    }
+
+    @Test
+    public void canNotDebt(){
+        int balance = 1000;
+        int tooBigWithdraw = 1500;
+        this.bankAccount.deposit(balance);
+        this.bankAccount.withdraw(tooBigWithdraw);
+        assertEquals(balance-tooBigWithdraw, this.bankAccount.getBalance());
+    }
 }

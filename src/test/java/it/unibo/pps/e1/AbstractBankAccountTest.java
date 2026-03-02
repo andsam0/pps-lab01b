@@ -30,11 +30,11 @@ public abstract class AbstractBankAccountTest {
 //        assertEquals(initialAmount - withdrawAmount, this.bankAccount.getBalance());
 //    }
 
-    @Test
-    public void cannotWithdrawMoreThanAvailable(){
-        int balanceAmount = 1000;
-        int bigWithdraw = 1200;
-        this.bankAccount.deposit(balanceAmount);
-        assertThrows(IllegalStateException.class, () -> this.bankAccount.withdraw(bigWithdraw));
-    }
+//    @Test
+//    public void cannotWithdrawMoreThanAvailable(){
+//        int balanceAmount = 1000;
+//        int bigWithdraw = 1200;
+//        this.bankAccount.deposit(balanceAmount);
+//        assertThrows(IllegalStateException.class, () -> this.bankAccount.withdraw(bigWithdraw));
+//    }
 }

@@ -19,7 +19,7 @@ public class GoldBankAccount implements BankAccount {
     }
 
     public void withdraw(int amount) {
-        if (this.getBalance() < amount){
+        if (this.getBalance() < amount-500){
             throw new IllegalStateException();
         }
         bankAccount.withdraw(amount + feeStrategy.calculateFee(amount));
