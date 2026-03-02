@@ -14,6 +14,6 @@ public class BankAccountFactoryImpl implements BankAccountFactory{
 
     @Override
     public BankAccount createGoldAccount() {
-        return new GoldBankAccount(new CoreBankAccount(), amount -> 0);
+        return new GoldBankAccount(new CoreBankAccount(), amount -> 0, ((balance, withdrawAmount) -> balance < withdrawAmount - 500));
     }
 }

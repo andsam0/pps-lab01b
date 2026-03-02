@@ -4,10 +4,12 @@ public class GoldBankAccount implements BankAccount {
 
     private final BankAccount bankAccount;
     private final CalculateFeeStrategy feeStrategy;
+    private final CanWithdrawStrategy withdrawStrategy;
 
-    public GoldBankAccount(BankAccount bankAccount, CalculateFeeStrategy feeStrategy) {
+    public GoldBankAccount(BankAccount bankAccount, CalculateFeeStrategy feeStrategy, CanWithdrawStrategy withdrawStrategy) {
         this.bankAccount = bankAccount;
         this.feeStrategy = feeStrategy;
+        this.withdrawStrategy = withdrawStrategy;
     }
 
     public int getBalance() {
@@ -19,9 +21,10 @@ public class GoldBankAccount implements BankAccount {
     }
 
     public void withdraw(int amount) {
-        if (this.getBalance() < amount-500){
+        if (this.withdrawStrategy.canWithdraw(bankAccount.getBalance(), amount)){
             throw new IllegalStateException();
         }
         bankAccount.withdraw(amount + feeStrategy.calculateFee(amount));
     }
 }
+//this.getBalance() < amount - 500
