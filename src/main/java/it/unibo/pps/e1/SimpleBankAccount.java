@@ -1,12 +1,12 @@
 package it.unibo.pps.e1;
 
-public class SilverBankAccount implements BankAccount {
+public class SimpleBankAccount implements BankAccount {
 
     private final BankAccount bankAccount;
     private final CalculateFeeStrategy feeStrategy;
     private final CanWithdrawStrategy withdrawStrategy;
 
-    public SilverBankAccount(BankAccount bankAccount, CalculateFeeStrategy feeStrategy, CanWithdrawStrategy withdrawStrategy) {
+    public SimpleBankAccount(BankAccount bankAccount, CalculateFeeStrategy feeStrategy, CanWithdrawStrategy withdrawStrategy) {
         this.bankAccount = bankAccount;
         this.feeStrategy = feeStrategy;
         this.withdrawStrategy = withdrawStrategy;
@@ -27,3 +27,4 @@ public class SilverBankAccount implements BankAccount {
         bankAccount.withdraw(amount + feeStrategy.calculateFee(amount));
     }
 }
+
