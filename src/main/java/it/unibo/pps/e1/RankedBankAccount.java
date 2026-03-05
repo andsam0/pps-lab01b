@@ -1,12 +1,12 @@
 package it.unibo.pps.e1;
 
-public class SimpleBankAccount implements BankAccount {
+public class RankedBankAccount implements BankAccount {
 
     private final BankAccount bankAccount;
     private final CalculateFeeStrategy feeStrategy;
     private final CanWithdrawStrategy withdrawStrategy;
 
-    public SimpleBankAccount(BankAccount bankAccount, CalculateFeeStrategy feeStrategy, CanWithdrawStrategy withdrawStrategy) {
+    public RankedBankAccount(BankAccount bankAccount, CalculateFeeStrategy feeStrategy, CanWithdrawStrategy withdrawStrategy) {
         this.bankAccount = bankAccount;
         this.feeStrategy = feeStrategy;
         this.withdrawStrategy = withdrawStrategy;
