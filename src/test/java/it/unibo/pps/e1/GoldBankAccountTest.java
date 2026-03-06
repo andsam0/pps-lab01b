@@ -33,7 +33,7 @@ public class GoldBankAccountTest extends AbstractBankAccountTest {
     @Test
     public void canNotDebt(){
         int balance = 1000;
-        int tooBigWithdraw = 1500;
+        int tooBigWithdraw = 1501;
         this.bankAccount.deposit(balance);
         this.bankAccount.withdraw(tooBigWithdraw);
         assertEquals(balance-tooBigWithdraw, this.bankAccount.getBalance());
